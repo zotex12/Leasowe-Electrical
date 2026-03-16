@@ -392,18 +392,30 @@
     }
     .feature-list div {
       display: grid;
-      grid-template-columns: 46px 1fr;
+      grid-template-columns: 54px minmax(0, 1fr);
       gap: 14px;
       align-items: start;
     }
+    .feature-list .icon {
+      margin-bottom: 0;
+      justify-self: center;
+      align-self: start;
+      flex-shrink: 0;
+    }
+    .feature-list div > div:last-child {
+      min-width: 0;
+    }
     .feature-list b {
       display: block;
-      margin-bottom: 3px;
+      margin: 0 0 3px;
       color: var(--ink);
+      line-height: 1.18;
     }
     .feature-list span {
+      display: block;
       color: var(--muted);
       font-size: .96rem;
+      line-height: 1.55;
     }
 
     .gallery-grid {
@@ -738,6 +750,19 @@
       }
       .contact-card, .form-card, .feature-box, .service-card, .review-card, .mini-item {
         padding: 20px;
+      }
+      .feature-list {
+        gap: 18px;
+      }
+      .feature-list div {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 12px;
+      }
+      .feature-list b {
+        font-size: 1rem;
+      }
+      .feature-list span {
+        font-size: .95rem;
       }
       .topbar-inner {
         gap: 8px;
